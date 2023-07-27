@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exibir Números Naturais</title>
+</head>
+<body>
+  <h1>Exibir Números Naturais</h1>
+  <form>
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" name="numero" required>
+    <button type="button" onclick="exibirNumeros()">Exibir</button>
+  </form>
+  <div id="resultado"></div>
+
+  <script>
+    function exibirNumerosNaturais(numero) {
+      if (numero === 0) {
+        return "Não existem números a serem exibidos.";
+      } else {
+        let resultado = "Números naturais entre 0 e " + numero + ":\n";
+        for (let i = 0; i <= numero; i++) {
+          resultado += i + "\n";
+        }
+        return resultado;
+      }
+    }
+
+    function exibirNumeros() {
+      const numeroDigitado = parseInt(document.getElementById('numero').value);
+      const resultadoDiv = document.getElementById('resultado');
+      resultadoDiv.textContent = exibirNumerosNaturais(numeroDigitado);
+    }
+  </script>
+</body>
+</html>
